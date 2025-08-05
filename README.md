@@ -18,6 +18,15 @@ Our platform allows users to:
 * 🧑‍💻 **Customize accounts** for a more personalized shopping experience.
 
 ---
+### 🎥 **Video Demo**
+
+Watch our final release demo video showcasing BuyWise in action:  
+👉 [**BuyWise Demo Video**](https://www.youtube.com/watch?v=IbDX7Y00ytU)
+
+Or preview it below:
+
+[![BuyWise Demo](https://img.youtube.com/vi/IbDX7Y00ytU/0.jpg)](https://www.youtube.com/watch?v=IbDX7Y00ytU)
+---
 
 ## 🚀 **Key Features**
 
