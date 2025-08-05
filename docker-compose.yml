@@ -1,0 +1,65 @@
+services:
+  server:
+    build: ./server
+    container_name: backend-container
+    ports:
+      - "3000:3000"
+    volumes:
+    - ./server:/app
+    # The line below makes a local node_modules moved into that container
+    # Make sure to get the freshest version of dependencies 
+    # by removing node_modules and package-lock.json, reinstalling, and rerunning before including the line below
+    - backend_node_modules:/app/node_modules
+
+  client:
+    build: ./client
+    container_name: frontend-container
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - frontend_node_modules:/app/node_modules
+    depends_on:
+      - server
+
+  client-tests:
+    build: ./client
+    container_name: frontend-tests
+    command: npm run test:vi
+    volumes:
+      - frontend_reports:/app/reports
+
+  server-tests:
+    build: ./server
+    container_name: backend-tests
+    command: npm run test:vi
+    volumes:
+      - backend_reports:/app/reports
+
+  report-server:
+    image: node:22
+    container_name: vitest-report-server
+    working_dir: /app
+    command: npx http-server reports -p 8080 -c-1
+    volumes:
+      - frontend_reports:/app/reports/frontend
+      - backend_reports:/app/reports/backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - server-tests
+      - client-tests
+
+volumes:
+  frontend_node_modules:
+  backend_node_modules:
+  frontend_reports:
+  backend_reports:
+
+# Message to fix issue
+# Error: Cannot find module @rollup/rollup-linux-x64-gnu. 
+# npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). 
+# Please try `npm i` again after removing both package-lock.json and node_modules directory.
+# delete node_modules, package-lock.json in client and 
+# comment in - frontend_node_modules:/app/node_modules line
+# Then run docker-compose up --build again.

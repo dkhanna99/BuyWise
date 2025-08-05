@@ -1,0 +1,39 @@
+/* Base layout styles */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar takes fixed width */
+.sidebar {
+  width: 180px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  /* Same as sidebar width */
+  margin-left: 260px; 
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+/* Hide sidebar on small screens */
+@media (max-width: 840px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+}

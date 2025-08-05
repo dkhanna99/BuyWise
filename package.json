@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@auth0/auth0-react": "^2.3.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8"
+  }
+}

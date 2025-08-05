@@ -1,0 +1,7 @@
+4bb5e9ea649e59b59dc159ed68200b486fc48df0,MODIFY,regular-file,client/reports/assets/index-D_ryMEPs.js,696555,24;49;54
+8cd20bb04b0925701b5c617cb4307e304fe7a290,MODIFY,regular-file,client/reports/assets/index-X8b7Z_4p.css,76825,1
+470be7b1aab80c9c45ad2aa501fef37f43c0c5a7,MODIFY,regular-file,client/src/components/TestAI.jsx,4989,23
+7cef27f5c3fd128d07699c094d07888a77ae4ec6,MODIFY,regular-file,client/src/pages/ExplorePage.jsx,17340,64
+4bb5e9ea649e59b59dc159ed68200b486fc48df0,MODIFY,regular-file,server/reports/assets/index-D_ryMEPs.js,696555,24;49;54
+8cd20bb04b0925701b5c617cb4307e304fe7a290,MODIFY,regular-file,server/reports/assets/index-X8b7Z_4p.css,76825,1
+ecd9c514f04f861972b4b97d4a0bf2060097512a,MODIFY,regular-file,server/src/services/AIService.ts,18220,14
